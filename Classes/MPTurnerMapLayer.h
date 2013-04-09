@@ -11,7 +11,7 @@ class MPTurnerMapLayer : public MPLayer
 public:
     CREATE_FUNC(MPTurnerMapLayer);
     virtual bool init();
-
+    
 private:
     void titleCallback(CCObject * pSender);
     CCSprite * player;

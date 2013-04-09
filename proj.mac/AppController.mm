@@ -56,7 +56,7 @@ static MPApplication s_sharedApplication;
         
 //        [glView setFrameZoomFactor:0.4];
         [glView setFrameZoomFactor:1.0];
-
+        
 		cocos2d::CCApplication::sharedApplication()->run();
 	}
 

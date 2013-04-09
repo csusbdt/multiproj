@@ -8,11 +8,11 @@ USING_NS_CC;
 bool MPTurnerMapLayer::init()
 {
 	CCDirector * director = CCDirector::sharedDirector();
+    
+    this->setAccelerometerEnabled(true);
+    this->setKeypadEnabled(true);
 
     CCPoint origin = director->getVisibleOrigin();
-
-//	CCLOG("%.2f", origin.x);
-//	CCLOG("%.2f", origin.y);
 
 	float h = director->getVisibleSize().height;
 	float w = director->getVisibleSize().width;
@@ -34,8 +34,9 @@ bool MPTurnerMapLayer::init()
     
 	// Screen title
     CCLabelTTF * label = CCLabelTTF::create("Turner Scene", "Arial", TITLE_FONT_SIZE);
-    label->setPosition(ccp(origin.x + w/2,
-                           origin.y + h - label->getContentSize().height));
+    label->setPosition(
+        ccp(origin.x + w/2, origin.y + h - label->getContentSize().height)
+    );
     addChild(label, 1);
 
 	// Player sprite
