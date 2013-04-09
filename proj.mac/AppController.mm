@@ -23,6 +23,7 @@
  ****************************************************************************/
  
 #import "AppController.h"
+#import "AppWindow.h"
 #import "MPApplication.h"
 
 static MPApplication s_sharedApplication;
@@ -31,6 +32,11 @@ static MPApplication s_sharedApplication;
 
 	@synthesize window, glView;
 
+    - (void)keyDown:(NSEvent *)theEvent
+    {
+        CCLOG("x");
+    }
+
 	-(void) applicationDidFinishLaunching:(NSNotification *)aNotification
 	{
 		// create the window
@@ -38,7 +44,8 @@ static MPApplication s_sharedApplication;
 		// smaller and therefore ipad graphics are not loaded
 //		NSRect rect = NSMakeRect(0, 0, 2048, 1536);
 		NSRect rect = NSMakeRect(0, 0, 1024, 768);
-		window = [[NSWindow alloc] initWithContentRect:rect
+//		window = [[NSWindow alloc] initWithContentRect:rect
+        window = [[AppWindow alloc] initWithContentRect:rect
 			styleMask:( NSClosableWindowMask | NSTitledWindowMask )
 			backing:NSBackingStoreBuffered
 			defer:YES];
