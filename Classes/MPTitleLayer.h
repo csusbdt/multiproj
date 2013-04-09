@@ -23,6 +23,8 @@ public:
 
     void selectTurnerMap(CCObject* pSender);
 
+	void selectJustinMap(CCObject* pSender);
+
 };
 
 #endif

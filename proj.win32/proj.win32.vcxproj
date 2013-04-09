@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\Resources\JustinMap\TileMap.tmx" />
     <None Include="large.ico" />
     <None Include="small.ico" />
   </ItemGroup>
@@ -93,6 +94,7 @@
     <ClInclude Include="..\Classes\MPAudioLayer.h" />
     <ClInclude Include="..\Classes\MPBox2DLayer.h" />
     <ClInclude Include="..\Classes\MPGuiTestLayer.h" />
+    <ClInclude Include="..\Classes\MPJustinMapLayer.h" />
     <ClInclude Include="..\Classes\MPKeyboard.h" />
     <ClInclude Include="..\Classes\MPLayer.h" />
     <ClInclude Include="..\Classes\MPMacros.h" />
@@ -113,6 +115,7 @@
     <ClCompile Include="..\Classes\MPAudioLayer.cpp" />
     <ClCompile Include="..\Classes\MPBox2DLayer.cpp" />
     <ClCompile Include="..\Classes\MPGuiTestLayer.cpp" />
+    <ClCompile Include="..\Classes\MPJustinMapLayer.cpp" />
     <ClCompile Include="..\Classes\MPKeyboard.cpp" />
     <ClCompile Include="..\Classes\MPLayer.cpp" />
     <ClCompile Include="..\Classes\MPMapLayer.cpp" />
