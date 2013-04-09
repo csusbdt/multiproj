@@ -65,6 +65,7 @@
 		310EE15D17068EA700FB111F /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE14217068EA700FB111F /* b2WheelJoint.cpp */; };
 		310EE16117068EB800FB111F /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE15F17068EB800FB111F /* b2Rope.cpp */; };
 		311A3DF716EEF571005456B4 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D853BD16EED32300F4569B /* libcocos2dx.a */; };
+		314004E1171456EC00CFEBE7 /* MPJustinMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */; };
 		31EFD538170E4F5B00F02C42 /* MPKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFD536170E4F5B00F02C42 /* MPKeyboard.cpp */; };
 		31EFFB6F170E97BF0070399D /* MPLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFFB6B170E97BE0070399D /* MPLayer.cpp */; };
 		31EFFB70170E97BF0070399D /* MPTurnerMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31EFFB6D170E97BF0070399D /* MPTurnerMapLayer.cpp */; };
@@ -217,6 +218,8 @@
 		310EE14317068EA700FB111F /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		310EE15F17068EB800FB111F /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		310EE16017068EB800FB111F /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPJustinMapLayer.cpp; path = ../Classes/MPJustinMapLayer.cpp; sourceTree = "<group>"; };
+		314004E0171456EC00CFEBE7 /* MPJustinMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPJustinMapLayer.h; path = ../Classes/MPJustinMapLayer.h; sourceTree = "<group>"; };
 		31D853B816EED32300F4569B /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		31D853BE16EEF26F00F4569B /* stdafx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
 		31EFD536170E4F5B00F02C42 /* MPKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPKeyboard.cpp; path = ../Classes/MPKeyboard.cpp; sourceTree = "<group>"; };
@@ -517,6 +520,8 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */,
+				314004E0171456EC00CFEBE7 /* MPJustinMapLayer.h */,
 				31EFFB6B170E97BE0070399D /* MPLayer.cpp */,
 				31EFFB6C170E97BF0070399D /* MPLayer.h */,
 				31EFFB6D170E97BF0070399D /* MPTurnerMapLayer.cpp */,
@@ -752,6 +757,7 @@
 				31EFD538170E4F5B00F02C42 /* MPKeyboard.cpp in Sources */,
 				31EFFB6F170E97BF0070399D /* MPLayer.cpp in Sources */,
 				31EFFB70170E97BF0070399D /* MPTurnerMapLayer.cpp in Sources */,
+				314004E1171456EC00CFEBE7 /* MPJustinMapLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
