@@ -40,8 +40,17 @@ bool MPJustinMapLayer::init()
                            origin.y + h - label->getContentSize().height));
     addChild(label, 1);
 
+	// *************** TESTING BEGINS HERE ***********************
+
+	// create a TMX map
+ CCTMXTiledMap *map = CCTMXTiledMap::create("JustinMap/TileMap.tmx");
+ this->addChild(map, 0);
+
+
+// ***************** TESTING ENDS HERE ********************
+
 	// Player sprite
-	player = CCSprite::create("andrew_map/Player.png");
+	player = CCSprite::create("JustinMap/Player.png");
 	player->setPosition(ccp(w/2, h/2));
 	addChild(player, 1);
 

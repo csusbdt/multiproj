@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\Resources\JustinMap\TileMap.tmx" />
     <None Include="large.ico" />
     <None Include="small.ico" />
   </ItemGroup>

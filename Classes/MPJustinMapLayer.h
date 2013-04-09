@@ -13,6 +13,7 @@ public:
     virtual bool init();
 
 private:
+	//static void antiAliasMap(CCTMXTiledMap * map);
     void titleCallback(CCObject * pSender);
     CCSprite * player;
 };

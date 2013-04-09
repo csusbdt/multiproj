@@ -27,6 +27,9 @@
     <None Include="small.ico">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\Resources\JustinMap\TileMap.tmx">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
