@@ -85,6 +85,14 @@ bool MPTitleLayer::init()
 		CCMenuItemLabel::create(justinMapLabel, this, menu_selector(MPTitleLayer::selectJustinMap));
 	justinMapItem->setPosition(xPos, yPos);   
 
+	// Jared Map Button
+	yPos -= yInc;
+    CCLabelTTF* jaredMapLabel = CCLabelTTF::create("Jared Map Scene", "Arial", TITLE_FONT_SIZE);
+    jaredMapLabel->setPosition(CCPointZero);    
+    CCMenuItemLabel * jaredMapItem = 
+		CCMenuItemLabel::create(jaredMapLabel, this, menu_selector(MPTitleLayer::selectJaredMap));
+	jaredMapItem->setPosition(xPos, yPos);  
+
 	// Close button
     CCMenuItemImage * closeItem = 
 		CCMenuItemImage::create("CloseNormal.png", "CloseSelected.png", this, menu_selector(MPTitleLayer::menuCloseCallback));
@@ -95,7 +103,7 @@ bool MPTitleLayer::init()
 	);
     
 	// Menu container
-    CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, turnerMapItem, justinMapItem, closeItem, NULL);
+    CCMenu * menu = CCMenu::create(box2DItem, guiTestItem, audioItem, mapItem, turnerMapItem, justinMapItem, jaredMapItem, closeItem, NULL);
     menu->setPosition(CCPointZero);
     this->addChild(menu, 1);
     
@@ -130,6 +138,11 @@ void MPTitleLayer::selectJustinMap(CCObject* pSender)
 void MPTitleLayer::selectTurnerMap(CCObject* pSender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPScenes::createTurnerMapScene());
+}
+
+void MPTitleLayer::selectJaredMap(CCObject* pSender)
+{
+	CCDirector::sharedDirector()->replaceScene(MPScenes::createJaredMapScene());
 }
 
 void MPTitleLayer::menuCloseCallback(CCObject* pSender)

@@ -25,6 +25,7 @@ public:
 
 	void selectJustinMap(CCObject* pSender);
 
+	void selectJaredMap(CCObject* pSender);
 };
 
 #endif

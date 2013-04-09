@@ -6,6 +6,7 @@
 #include "MPMapLayer.h"
 #include "MPTurnerMapLayer.h"
 #include "MPJustinMapLayer.h"
+#include "MPJaredMapLayer.h"
 #include "MPGuiTestLayer.h"
 #include "MPBox2DLayer.h"
 #include "MPAudioLayer.h"
@@ -36,6 +37,13 @@ cocos2d::CCScene * MPScenes::createJustinMapScene(){
 cocos2d::CCScene * MPScenes::createTurnerMapScene(){
     CCScene *scene = CCScene::create();
     CCLayer *layer = MPTurnerMapLayer::create();
+    scene->addChild(layer);
+    return scene;
+}
+
+cocos2d::CCScene * MPScenes::createJaredMapScene(){
+    CCScene *scene = CCScene::create();
+    CCLayer *layer = MPJaredMapLayer::create();
     scene->addChild(layer);
     return scene;
 }
