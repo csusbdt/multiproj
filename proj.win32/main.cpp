@@ -24,6 +24,7 @@ LRESULT CustomWindowProc(UINT message, WPARAM wParam, LPARAM lParam, BOOL* pProc
 		else if (wParam == 'S') MPKeyboard::sDown();
 		else if (wParam == 'D') MPKeyboard::dDown();
 	}
+	*pProcessed = false;
 	return 0;
 }
 
