@@ -96,6 +96,7 @@
     <ClInclude Include="..\Classes\MPGuiTestLayer.h" />
     <ClInclude Include="..\Classes\MPJustinMapLayer.h" />
     <ClInclude Include="..\Classes\MPKeyboard.h" />
+    <ClInclude Include="..\Classes\MPKeyboardHandler.h" />
     <ClInclude Include="..\Classes\MPLayer.h" />
     <ClInclude Include="..\Classes\MPMacros.h" />
     <ClInclude Include="..\Classes\MPMapLayer.h" />

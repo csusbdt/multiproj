@@ -89,6 +89,9 @@
     <ClInclude Include="..\Classes\MPJustinMapLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\MPKeyboardHandler.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

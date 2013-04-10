@@ -69,7 +69,7 @@ bool MPTitleLayer::init()
 		CCMenuItemLabel::create(mapLabel, this, menu_selector(MPTitleLayer::selectMap));
 	mapItem->setPosition(xPos, yPos);
     
-    // Turner Map Button
+    // Turner Map Buttonog
 	yPos -= yInc;
     CCLabelTTF* turnerMapLabel = CCLabelTTF::create("Turner Map Scene", "Arial", TITLE_FONT_SIZE);
     turnerMapLabel->setPosition(CCPointZero);    
