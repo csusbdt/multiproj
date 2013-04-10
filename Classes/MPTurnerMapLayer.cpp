@@ -6,7 +6,7 @@
 
 USING_NS_CC;
 
-static float playerSpeed = 1.5f;
+static float playerSpeed = 100;
 
 void MPTurnerMapLayer::keyUp(char key)
 {
@@ -16,23 +16,23 @@ void MPTurnerMapLayer::keyDown(char key)
 {
 }
 
-void MPTurnerMapLayer::update(float delta)
+void MPTurnerMapLayer::update(float dt)
 {
 	if (MPKeyboard::isKeyDown('w')) 
 	{
-		player->setPositionY(player->getPositionY() + playerSpeed);
+		player->setPositionY(player->getPositionY() + playerSpeed * dt);
 	}
 	if (MPKeyboard::isKeyDown('s'))
 	{
-		player->setPositionY(player->getPositionY() - playerSpeed);
+		player->setPositionY(player->getPositionY() - playerSpeed * dt);
 	}
 	if (MPKeyboard::isKeyDown('a')) 
 	{
-		player->setPositionX(player->getPositionX() - playerSpeed);
+		player->setPositionX(player->getPositionX() - playerSpeed * dt);
 	}
 	if (MPKeyboard::isKeyDown('d'))
 	{
-		player->setPositionX(player->getPositionX() + playerSpeed);
+		player->setPositionX(player->getPositionX() + playerSpeed * dt);
 	}
 }
 
@@ -76,6 +76,9 @@ bool MPTurnerMapLayer::init()
 	addChild(player, 1);
     
     MPKeyboard::setHandler(this);
+    
+    CCTMXTiledMap * map = CCTMXTiledMap::create("turner_map/turner_map.tmx");
+    this->addChild(map, 0);
 
 	scheduleUpdate();
 

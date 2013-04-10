@@ -14,13 +14,19 @@
 - (void)keyDown:(NSEvent *)event
 {
     unichar c = [[event charactersIgnoringModifiers] characterAtIndex:0];
-    if (c == 'W' || c == 'w') MPKeyboard::wDown();
+    if (c == 'A' || c == 'a') MPKeyboard::aDown();
+    else if (c == 'W' || c == 'w') MPKeyboard::wDown();
+    else if (c == 'S' || c == 's') MPKeyboard::sDown();
+    else if (c == 'D' || c == 'd') MPKeyboard::dDown();
 }
 
 - (void)keyUp:(NSEvent *)event
 {
     unichar c = [[event charactersIgnoringModifiers] characterAtIndex:0];
-    if (c == 'W' || c == 'w') MPKeyboard::wUp();
+    if (c == 'A' || c == 'a') MPKeyboard::aUp();
+    else if (c == 'W' || c == 'w') MPKeyboard::wUp();
+    else if (c == 'S' || c == 's') MPKeyboard::sUp();
+    else if (c == 'D' || c == 'd') MPKeyboard::dUp();
 }
 
 @end

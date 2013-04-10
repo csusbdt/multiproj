@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="background" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="../andrew_map/tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz6EOg0AURNFVLYpWFSgJSUEV/v//eGLFaoJ44oijxtxZSikLQHiEZ6NL0HRFH16Nd4ImP/zI4hOGxthsU/hWc4LWq35hrbYEPX74kck/7NWRoAcAAAAAAADudgKHMyOm
+  </data>
+ </layer>
+ <objectgroup name="objects" width="50" height="50">
+  <object name="Player" x="226" y="269" width="43" height="41">
+   <properties>
+    <property name="initialVelocity" value=".1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
