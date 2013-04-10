@@ -13,6 +13,26 @@ bool MPKeyboard::isWUp = true;
 bool MPKeyboard::isSUp = true;
 bool MPKeyboard::isDUp = true;
 
+bool MPKeyboard::isKeyDown(char c)
+{
+	if (c == 'a')
+	{
+		return !isAUp;
+	}
+	else if (c == 'w')
+	{
+		return !isWUp;
+	}
+	else if (c == 's')
+	{
+		return !isSUp;
+	}
+	else if (c == 'd')
+	{
+		return !isDUp;
+	}
+}
+
 void MPKeyboard::setHandler(MPKeyboardHandler * handler)
 {
     MPKeyboard::handler = handler;

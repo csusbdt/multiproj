@@ -16,15 +16,8 @@ public:
     virtual void keyUp(char key);
     virtual void keyDown(char key);
 
-//    virtual void aKeyUp();
-//    virtual void aKeyDown();
-//    virtual void wKeyUp();
-//    virtual void wKeyDown();
-//    virtual void sKeyUp();
-//    virtual void sKeyDown();
-//    virtual void dKeyUp();
-//    virtual void dKeyDown();
-    
+	virtual void update(float delta);
+
 private:
     void titleCallback(CCObject * pSender);
     CCSprite * player;

@@ -1,11 +1,3 @@
-//
-//  MPTitleLayer.cpp
-//  HelloCpp
-//
-//  Created by Tyrice Clark on 3/31/13.
-//  Copyright (c) 2013 Bullets in a Burning Box, Inc. All rights reserved.
-//
-
 #include "stdafx.h"
 #include "MPTitleLayer.h"
 #include "MPScenes.h"
@@ -16,15 +8,10 @@ USING_NS_CC;
 bool MPTitleLayer::init()
 {
 	CCDirector * director = CCDirector::sharedDirector();
-
     CCPoint origin = director->getVisibleOrigin();
-
 	float h = director->getVisibleSize().height;
 	float w = director->getVisibleSize().width;
 
-//    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-//    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
-    
     // Scene title
     CCLabelTTF * pLabel = CCLabelTTF::create("Title Scene", "Arial", TITLE_FONT_SIZE);
     pLabel->setPosition(

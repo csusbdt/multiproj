@@ -6,16 +6,25 @@
 
 USING_NS_CC;
 
-void onKeyUpDown(UINT message, WPARAM wParam, LPARAM lParam)
+CCEGLView * eglView = NULL;
+
+LRESULT CustomWindowProc(UINT message, WPARAM wParam, LPARAM lParam, BOOL* pProcessed)
 {
 	if (message == WM_KEYUP)
 	{
-		if (wParam == 'W') MPKeyboard::wUp();
+		if (wParam == 'A') MPKeyboard::aUp();
+		else if (wParam == 'W') MPKeyboard::wUp();
+		else if (wParam == 'S') MPKeyboard::sUp();
+		else if (wParam == 'D') MPKeyboard::dUp();
 	}
 	else if (message == WM_KEYDOWN)
 	{
-		if (wParam == 'W') MPKeyboard::wDown();
+		if (wParam == 'A') MPKeyboard::aDown();
+		else if (wParam == 'W') MPKeyboard::wDown();
+		else if (wParam == 'S') MPKeyboard::sDown();
+		else if (wParam == 'D') MPKeyboard::dDown();
 	}
+	return 0;
 }
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
@@ -27,12 +36,12 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     MPApplication app;
-    CCEGLView * eglView = CCEGLView::sharedOpenGLView();
+    eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("Multiproj");
     eglView->setFrameSize(1024, 768); // 4/3
     eglView->setFrameZoomFactor(1.0f);
 
-	eglView->setAccelerometerKeyHook(onKeyUpDown);
+	eglView->setWndProc(CustomWindowProc);
 
     return CCApplication::sharedApplication()->run();
 }

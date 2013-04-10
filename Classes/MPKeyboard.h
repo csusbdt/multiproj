@@ -21,13 +21,16 @@ public:
 	static void dUp();
 	static void dDown();
 
+	static bool isKeyDown(char c);
+
     static void setHandler(MPKeyboardHandler * handler);
-    
+
 private:
 	static bool isAUp;
 	static bool isWUp;
 	static bool isSUp;
 	static bool isDUp;
+
     static MPKeyboardHandler * handler;
 };
 

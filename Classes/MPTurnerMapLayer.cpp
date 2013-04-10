@@ -6,12 +6,34 @@
 
 USING_NS_CC;
 
+static float playerSpeed = 1.5f;
+
 void MPTurnerMapLayer::keyUp(char key)
 {
 }
 
 void MPTurnerMapLayer::keyDown(char key)
 {
+}
+
+void MPTurnerMapLayer::update(float delta)
+{
+	if (MPKeyboard::isKeyDown('w')) 
+	{
+		player->setPositionY(player->getPositionY() + playerSpeed);
+	}
+	if (MPKeyboard::isKeyDown('s'))
+	{
+		player->setPositionY(player->getPositionY() - playerSpeed);
+	}
+	if (MPKeyboard::isKeyDown('a')) 
+	{
+		player->setPositionX(player->getPositionX() - playerSpeed);
+	}
+	if (MPKeyboard::isKeyDown('d'))
+	{
+		player->setPositionX(player->getPositionX() + playerSpeed);
+	}
 }
 
 bool MPTurnerMapLayer::init()
@@ -54,6 +76,8 @@ bool MPTurnerMapLayer::init()
 	addChild(player, 1);
     
     MPKeyboard::setHandler(this);
+
+	scheduleUpdate();
 
 /*
     CCSprite *tile = layer->tileAt(ccp(5,6));
