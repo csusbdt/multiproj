@@ -235,6 +235,7 @@
 		31F1A39E17075BCB00CA82D0 /* CCPhysicsDebugNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCPhysicsDebugNode.h; path = ../Classes/physics_nodes/CCPhysicsDebugNode.h; sourceTree = "<group>"; };
 		31F1A39F17075BCB00CA82D0 /* CCPhysicsSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCPhysicsSprite.cpp; path = ../Classes/physics_nodes/CCPhysicsSprite.cpp; sourceTree = "<group>"; };
 		31F1A3A017075BCB00CA82D0 /* CCPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCPhysicsSprite.h; path = ../Classes/physics_nodes/CCPhysicsSprite.h; sourceTree = "<group>"; };
+		31F276B81714E74900084F34 /* MPKeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPKeyboardHandler.h; path = ../Classes/MPKeyboardHandler.h; sourceTree = "<group>"; };
 		31F2FAF417066C74005A9793 /* MPBox2DLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPBox2DLayer.cpp; path = ../Classes/MPBox2DLayer.cpp; sourceTree = "<group>"; };
 		31F2FAF517066C74005A9793 /* MPBox2DLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPBox2DLayer.h; path = ../Classes/MPBox2DLayer.h; sourceTree = "<group>"; };
 		31F2FAF617066C74005A9793 /* MPGuiTestLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPGuiTestLayer.cpp; path = ../Classes/MPGuiTestLayer.cpp; sourceTree = "<group>"; };
@@ -523,6 +524,7 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				31F276B81714E74900084F34 /* MPKeyboardHandler.h */,
 				314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */,
 				314004E0171456EC00CFEBE7 /* MPJustinMapLayer.h */,
 				31EFFB6B170E97BE0070399D /* MPLayer.cpp */,

@@ -2,8 +2,17 @@
 #include "MPTurnerMapLayer.h"
 #include "MPScenes.h"
 #include "MPMacros.h"
+#include "MPKeyboard.h"
 
 USING_NS_CC;
+
+void MPTurnerMapLayer::keyUp(char key)
+{
+}
+
+void MPTurnerMapLayer::keyDown(char key)
+{
+}
 
 bool MPTurnerMapLayer::init()
 {
@@ -43,6 +52,8 @@ bool MPTurnerMapLayer::init()
 	player = CCSprite::create("andrew_map/Player.png");
 	player->setPosition(ccp(w/2, h/2));
 	addChild(player, 1);
+    
+    MPKeyboard::setHandler(this);
 
 /*
     CCSprite *tile = layer->tileAt(ccp(5,6));
