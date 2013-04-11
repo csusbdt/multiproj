@@ -1,5 +1,5 @@
-#ifndef HelloCpp_stdafx_h
-#define HelloCpp_stdafx_h
+#ifndef MP_STDAFX_H
+#define MP_STDAFX_H
 
 #undef CC_ENABLE_CHIPMUNK_INTEGRATION
 #define CC_ENABLE_BOX2D_INTEGRATION 1

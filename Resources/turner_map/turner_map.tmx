@@ -3,6 +3,14 @@
  <tileset firstgid="1" name="background" tilewidth="32" tileheight="32" spacing="1" margin="1">
   <image source="../andrew_map/tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
+ <tileset firstgid="49" name="collision" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="../andrew_map/meta_tiles.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="collidable" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
   <data encoding="base64" compression="zlib">
    eJztz6EOg0AURNFVLYpWFSgJSUEV/v//eGLFaoJ44oijxtxZSikLQHiEZ6NL0HRFH16Nd4ImP/zI4hOGxthsU/hWc4LWq35hrbYEPX74kck/7NWRoAcAAAAAAADudgKHMyOm
@@ -15,4 +23,9 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="collision" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztz8EJAEAIBLFtyf6b839wf5UEpoBJAACSetrKxyw+ZrnyAQAAAAAAAD8NcAsEmQ==
+  </data>
+ </layer>
 </map>

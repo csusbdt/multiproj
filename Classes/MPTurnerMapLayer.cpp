@@ -37,6 +37,7 @@ void MPTurnerMapLayer::update(float dt)
     //setViewPointCenter(player->getPosition());
 }
 
+// setViewPointCenter does not work yet and is not used.
 void MPTurnerMapLayer::setViewPointCenter(CCPoint position)
 {
     CCDirector * director = CCDirector::sharedDirector();
@@ -72,7 +73,7 @@ bool MPTurnerMapLayer::init()
 		"CloseNormal.png", 
 		"CloseSelected.png", 
 		this, 
-		menu_selector(MPTurnerMapLayer::titleCallback));
+		menu_selector(MPTurnerMapLayer::handleBackBtn));
 	backBtn->setPosition(
 		ccp(origin.x + w - backBtn->getContentSize().width / 2, origin.y + backBtn->getContentSize().height / 2)
 	);
@@ -102,18 +103,21 @@ bool MPTurnerMapLayer::init()
     map = CCTMXTiledMap::create("turner_map/turner_map.tmx");
     this->addChild(map, 0);
     
-    CCTMXLayer * background = map->layerNamed("background");
     CCTMXObjectGroup * objects = map->objectGroupNamed("objects");
     CCDictionary * playerSpawnPoint = objects->objectNamed("PlayerSpawnPoint");
     float x = playerSpawnPoint->valueForKey("x")->floatValue();
     float y = playerSpawnPoint->valueForKey("y")->floatValue();
     
+    // Will replace the following with call to setPlayerPosition.
     player->setPositionX(x);
     player->setPositionY(y);
     
+    // May try to get the following to work.
+    // See http://www.raywenderlich.com/1186/collisions-and-collectables-how-to-make-a-tile-based-game-with-cocos2d-part-2
     //setViewPointCenter(player->getPosition());
 
 	scheduleUpdate();
+    
 
 /*
     CCSprite *tile = layer->tileAt(ccp(5,6));
@@ -140,7 +144,26 @@ bool MPTurnerMapLayer::init()
     return true;
 }
 
-void MPTurnerMapLayer::titleCallback(CCObject* pSender)
+CCPoint MPTurnerMapLayer::tileCoordFromPosition(float posX, float posY)
+{
+    int x = posX / map->getTileSize().width;
+    int y = ((map->getMapSize().height * map->getTileSize().height) - posY) / map->getTileSize().height;
+    return ccp(x, y);
+}
+
+void MPTurnerMapLayer::setPlayerPosition(float x, float y)
+{
+    CCTMXLayer * collision = map->layerNamed("collision");
+    CCPoint tileCoord = tileCoordFromPosition(x, y);
+    
+    // check that tileCoord has no collision.
+    
+
+//    CCAssert(false, "not implemented");
+    assert(false);
+}
+
+void MPTurnerMapLayer::handleBackBtn(CCObject * sender)
 {
 	CCDirector::sharedDirector()->replaceScene(MPScenes::createTitleScene());
 }

@@ -19,10 +19,12 @@ public:
 	virtual void update(float delta);
 
 private:
-    void titleCallback(CCObject * pSender);
+    void handleBackBtn(CCObject * pSender);
     CCSprite * player;
     CCTMXTiledMap * map;
     void setViewPointCenter(CCPoint position);
+    void setPlayerPosition(float x, float y);
+    CCPoint tileCoordFromPosition(float x, float y);
 };
 
 #endif
