@@ -7,7 +7,7 @@ Thumbs.db
 ipch/
 *.opensdf
 win32.vs2010/enc_temp_folder
-win32.vs2010/win32.vs2010.suo
+*.suo
 
 # os x
 

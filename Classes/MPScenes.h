@@ -12,6 +12,7 @@ public:
     static cocos2d::CCScene * createMapScene();
 	static cocos2d::CCScene * createJustinMapScene();
     static cocos2d::CCScene * createTurnerMapScene();
+	static cocos2d::CCScene * createJaredMapScene();
     static cocos2d::CCScene * createBox2DScene();
     static cocos2d::CCScene * createTitleScene();
 };
