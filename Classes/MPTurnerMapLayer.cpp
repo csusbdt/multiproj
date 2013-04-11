@@ -58,6 +58,7 @@ void MPTurnerMapLayer::setViewPointCenter(CCPoint position)
 
 bool MPTurnerMapLayer::init()
 {
+	CCDirector::sharedDirector()->setProjection(kCCDirectorProjection2D);
     CCDirector * director = CCDirector::sharedDirector();
     
     this->setAccelerometerEnabled(true);
