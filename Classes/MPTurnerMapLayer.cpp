@@ -34,11 +34,30 @@ void MPTurnerMapLayer::update(float dt)
 	{
 		player->setPositionX(player->getPositionX() + playerSpeed * dt);
 	}
+    //setViewPointCenter(player->getPosition());
+}
+
+void MPTurnerMapLayer::setViewPointCenter(CCPoint position)
+{
+    CCDirector * director = CCDirector::sharedDirector();
+    
+	float h = director->getVisibleSize().height;
+	float w = director->getVisibleSize().width;
+    
+    int x = MAX(position.x, w/2);
+    int y = MAX(position.y, h/2);
+    x = MIN(x, (map->getMapSize().width * map->getTileSize().width) - w / 2);
+    y = MIN(y, (map->getMapSize().height * map->getTileSize().height) - h/2);
+    CCPoint actualPosition = ccp(x, y);
+    
+    CCPoint centerOfView(w/2, h/2);
+    CCPoint viewPoint = ccpSub(centerOfView, actualPosition);
+    position = viewPoint;  // don't think this is right
 }
 
 bool MPTurnerMapLayer::init()
 {
-	CCDirector * director = CCDirector::sharedDirector();
+    CCDirector * director = CCDirector::sharedDirector();
     
     this->setAccelerometerEnabled(true);
     this->setKeypadEnabled(true);
@@ -75,10 +94,24 @@ bool MPTurnerMapLayer::init()
 	player->setPosition(ccp(w/2, h/2));
 	addChild(player, 1);
     
+    CCFollow * follow = CCFollow::create(player);
+    runAction(follow);
+    
     MPKeyboard::setHandler(this);
     
-    CCTMXTiledMap * map = CCTMXTiledMap::create("turner_map/turner_map.tmx");
+    map = CCTMXTiledMap::create("turner_map/turner_map.tmx");
     this->addChild(map, 0);
+    
+    CCTMXLayer * background = map->layerNamed("background");
+    CCTMXObjectGroup * objects = map->objectGroupNamed("objects");
+    CCDictionary * playerSpawnPoint = objects->objectNamed("PlayerSpawnPoint");
+    float x = playerSpawnPoint->valueForKey("x")->floatValue();
+    float y = playerSpawnPoint->valueForKey("y")->floatValue();
+    
+    player->setPositionX(x);
+    player->setPositionY(y);
+    
+    //setViewPointCenter(player->getPosition());
 
 	scheduleUpdate();
 

@@ -21,6 +21,8 @@ public:
 private:
     void titleCallback(CCObject * pSender);
     CCSprite * player;
+    CCTMXTiledMap * map;
+    void setViewPointCenter(CCPoint position);
 };
 
 #endif

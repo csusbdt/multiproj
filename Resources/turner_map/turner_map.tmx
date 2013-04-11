@@ -9,7 +9,7 @@
   </data>
  </layer>
  <objectgroup name="objects" width="50" height="50">
-  <object name="Player" x="226" y="269" width="43" height="41">
+  <object name="PlayerSpawnPoint" x="226" y="269" width="43" height="41">
    <properties>
     <property name="initialVelocity" value=".1"/>
    </properties>
