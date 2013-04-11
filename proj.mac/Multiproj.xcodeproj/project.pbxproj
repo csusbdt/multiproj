@@ -64,6 +64,7 @@
 		310EE15C17068EA700FB111F /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE14017068EA700FB111F /* b2WeldJoint.cpp */; };
 		310EE15D17068EA700FB111F /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE14217068EA700FB111F /* b2WheelJoint.cpp */; };
 		310EE16117068EB800FB111F /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 310EE15F17068EB800FB111F /* b2Rope.cpp */; };
+		31125C6F1717609E0014C8CA /* MPJaredMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31125C6D1717609E0014C8CA /* MPJaredMapLayer.cpp */; };
 		311A3DF716EEF571005456B4 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D853BD16EED32300F4569B /* libcocos2dx.a */; };
 		314004E1171456EC00CFEBE7 /* MPJustinMapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */; };
 		31B9B53F1714D574002F4E32 /* AppWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31B9B53E1714D574002F4E32 /* AppWindow.mm */; };
@@ -219,6 +220,8 @@
 		310EE14317068EA700FB111F /* b2WheelJoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2WheelJoint.h; sourceTree = "<group>"; };
 		310EE15F17068EB800FB111F /* b2Rope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2Rope.cpp; sourceTree = "<group>"; };
 		310EE16017068EB800FB111F /* b2Rope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2Rope.h; sourceTree = "<group>"; };
+		31125C6D1717609E0014C8CA /* MPJaredMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPJaredMapLayer.cpp; path = ../Classes/MPJaredMapLayer.cpp; sourceTree = "<group>"; };
+		31125C6E1717609E0014C8CA /* MPJaredMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPJaredMapLayer.h; path = ../Classes/MPJaredMapLayer.h; sourceTree = "<group>"; };
 		314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MPJustinMapLayer.cpp; path = ../Classes/MPJustinMapLayer.cpp; sourceTree = "<group>"; };
 		314004E0171456EC00CFEBE7 /* MPJustinMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPJustinMapLayer.h; path = ../Classes/MPJustinMapLayer.h; sourceTree = "<group>"; };
 		31B9B53D1714D574002F4E32 /* AppWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWindow.h; sourceTree = "<group>"; };
@@ -524,6 +527,8 @@
 		41CD6C5D15BF750B005E6F29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				31125C6D1717609E0014C8CA /* MPJaredMapLayer.cpp */,
+				31125C6E1717609E0014C8CA /* MPJaredMapLayer.h */,
 				31F276B81714E74900084F34 /* MPKeyboardHandler.h */,
 				314004DF171456EC00CFEBE7 /* MPJustinMapLayer.cpp */,
 				314004E0171456EC00CFEBE7 /* MPJustinMapLayer.h */,
@@ -766,6 +771,7 @@
 				31EFFB70170E97BF0070399D /* MPTurnerMapLayer.cpp in Sources */,
 				314004E1171456EC00CFEBE7 /* MPJustinMapLayer.cpp in Sources */,
 				31B9B53F1714D574002F4E32 /* AppWindow.mm in Sources */,
+				31125C6F1717609E0014C8CA /* MPJaredMapLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
