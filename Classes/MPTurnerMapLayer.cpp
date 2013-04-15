@@ -6,6 +6,8 @@
 
 USING_NS_CC;
 
+#define COCOS2D_DEBUG 1
+
 static float playerSpeed = 100;
 
 void MPTurnerMapLayer::keyUp(char key)
@@ -18,23 +20,45 @@ void MPTurnerMapLayer::keyDown(char key)
 
 void MPTurnerMapLayer::update(float dt)
 {
-	if (MPKeyboard::isKeyDown('w')) 
+    float x = player->getPositionX();
+    float y = player->getPositionY();
+    float dx = 0;
+    float dy = 0;
+	if (MPKeyboard::isKeyDown('w') && !MPKeyboard::isKeyDown('s'))
 	{
-		player->setPositionY(player->getPositionY() + playerSpeed * dt);
+		dy = 1;
 	}
-	if (MPKeyboard::isKeyDown('s'))
+	else if (!MPKeyboard::isKeyDown('w') && MPKeyboard::isKeyDown('s'))
 	{
-		player->setPositionY(player->getPositionY() - playerSpeed * dt);
+		dy = -1;
 	}
-	if (MPKeyboard::isKeyDown('a')) 
+	if (MPKeyboard::isKeyDown('a') && !MPKeyboard::isKeyDown('d'))
 	{
-		player->setPositionX(player->getPositionX() - playerSpeed * dt);
+		dx = -1;
 	}
-	if (MPKeyboard::isKeyDown('d'))
+	else if (!MPKeyboard::isKeyDown('a') && MPKeyboard::isKeyDown('d'))
 	{
-		player->setPositionX(player->getPositionX() + playerSpeed * dt);
+		dx = 1;
 	}
-    //setViewPointCenter(player->getPosition());
+    if (dx != 0 && dy == 0)
+    {
+        x += dx * playerSpeed * dt;
+    }
+    else if (dx == 0 && dy != 0)
+    {
+        y += dy * playerSpeed * dt;
+    }
+    else if (dx != 0 && dy != 0)
+    {
+        float a = sqrt((2 * playerSpeed * dt * playerSpeed * dt));
+        x += dx * a;
+        y += dy * a;
+    }
+    else
+    {
+        return;
+    }
+    setPlayerPosition(x, y);
 }
 
 // setViewPointCenter does not work yet and is not used.
@@ -112,55 +136,56 @@ bool MPTurnerMapLayer::init()
     player->setPositionX(x);
     player->setPositionY(y);
     
-    // May try to get the following to work.
-    // See http://www.raywenderlich.com/1186/collisions-and-collectables-how-to-make-a-tile-based-game-with-cocos2d-part-2
+    // I can not get the following to work:
+    //    http://www.raywenderlich.com/1186/collisions-and-collectables-how-to-make-a-tile-based-game-with-cocos2d-part-2
     //setViewPointCenter(player->getPosition());
 
 	scheduleUpdate();
-    
 
-/*
-    CCSprite *tile = layer->tileAt(ccp(5,6));
-    assert(tile != NULL);
-    
-    layer->removeTileAt(ccp(5, 6));
-    
-    CCActionInterval*  actionBy = CCMoveBy::create(2, ccp(visibleSize.width * .5, visibleSize.height * .5));
-    map->runAction(actionBy);
-    
-    CCActionInterval* action = CCScaleBy::create(2, 2);
-    map->runAction(action);
-*/
-    
-    
-/*
-    CCSize s = layer->getLayerSize();
-    for (int x = 2; x < s.width; x++) {
-        for (int y = 0; y < s.height; y++) {
-            layer->removeTileAt(ccp(x, y));
-        }
-    }
-*/
     return true;
 }
 
 CCPoint MPTurnerMapLayer::tileCoordFromPosition(float posX, float posY)
 {
-    int x = posX / map->getTileSize().width;
-    int y = ((map->getMapSize().height * map->getTileSize().height) - posY) / map->getTileSize().height;
+    float x = posX / map->getTileSize().width;
+    float y = posY / map->getTileSize().height;
+    
+//    int h = map->getMapSize().height * map->getTileSize().height;
+//    int y = (h - posY) / map->getTileSize().height;
     return ccp(x, y);
 }
 
 void MPTurnerMapLayer::setPlayerPosition(float x, float y)
 {
-    CCTMXLayer * collision = map->layerNamed("collision");
     CCPoint tileCoord = tileCoordFromPosition(x, y);
+    CCTMXLayer * collision = map->layerNamed("collision");
     
-    // check that tileCoord has no collision.
+    int tileId = collision->tileGIDAt(tileCoord);
     
-
-//    CCAssert(false, "not implemented");
-    assert(false);
+    if (tileId != 0) return;
+    
+ /*
+  The following does not work:
+  
+    CCDictionary * props = map->propertiesForGID(tileId);
+    
+    if (props != NULL)
+    {
+        const CCString * collisionValue = props->valueForKey("collidable");
+        if (collisionValue == NULL)
+        {
+            CCLOG("collidable not defined for tile");
+            assert(false);
+        }
+        if (collisionValue->compare("collidable") == 0)
+        {
+            return;
+        }
+    }
+*/
+    
+    player->setPositionX(x);
+    player->setPositionY(y);
 }
 
 void MPTurnerMapLayer::handleBackBtn(CCObject * sender)
